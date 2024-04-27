@@ -1,0 +1,441 @@
+1)Exercícios: variáveis e expressões
+
+1.1)Faça um programa que leia um número inteiro e o imprima.
+#include <stdio.h>
+
+int main()
+{
+    int numero;
+ 
+	scanf("%d", &numero);
+ 
+	printf("\n%d", numero);
+
+    return 0;
+}
+
+1.2)Faça um programa que leia um número real e o imprima.
+#include <stdio.h>
+
+int main()
+{
+    float numero;
+ 
+	scanf("%f", &numero);
+ 
+	printf("\n%f", numero);
+
+    return 0;
+}
+
+1.3)Peça ao usuário para digitar três valores inteiros e imprima a soma deles.
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2, n3, soma;
+    
+    printf("Digite 3 valores inteiros: ");
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+    scanf("%d", &n3);
+    
+    soma = n1 + n2 + n3;
+    
+    printf("\nSoma: %d", soma);
+
+    return 0;
+}
+
+1.4)Leia um número real e imprima o resultado do quadrado desse número.
+#include <stdio.h>
+
+int main()
+{
+    float numero;
+ 
+	scanf("%f", &numero);
+ 
+	printf("\n%f", numero * numero);
+
+    return 0;
+}
+
+1.5)Leia quatro notas, calcule a média aritmética e imprima o resultado.
+#include <stdio.h>
+
+int main()
+{
+    float n1, n2, n3, n4, media;
+ 
+    printf("Nota 1: ");
+	scanf("%f", &n1);
+	
+	printf("Nota 2: ");
+	scanf("%f", &n2);
+	
+	printf("Nota 3: ");
+	scanf("%f", &n3);
+	
+	printf("Nota 4: ");
+	scanf("%f", &n4);
+	
+	media = (n1 + n2 + n3 + n4) / 4;
+ 
+	printf("\nMédia: %f", media);
+
+    return 0;
+}
+
+1.6)Leia um valor em real e a cotação do dólar. Em seguida, imprima o valor correspondente em dólares.
+#include <stdio.h>
+
+int main()
+{
+    float real, cotacao, dolar;
+ 
+    cotacao = 5,00;
+    
+    printf("Valor em real: ");
+    scanf("%f", &real);
+    
+    dolar = real * cotacao;
+ 
+	printf("\nValor em Dólar: %f", dolar);
+
+    return 0;
+}
+
+1.7)Leia um número inteiro e imprima o seu antecessor e o seu sucessor.
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    
+    printf("Escreva um número: ");
+    scanf("%d", &n);
+    
+    printf("\nAntecessor: %d", n - 1);
+    printf("\nNúmero: %d", n);
+    printf("\nSucessor: %d", n + 1);
+
+    return 0;
+}
+
+1.8)Receba o salário-base de um funcionário. Calcule e imprima o salário a receber, sabendo se que esse
+funcionário tem uma gratificação de 5% sobre o salário-base.
+#include <stdio.h>
+
+int main()
+{
+    float salario, salario_final;
+    
+    printf("Salário-base: ");
+    scanf("%f", &salario);
+    
+    salario_final = salario * 1.05;
+    
+    printf("Salário a receber: %2.f", salario_final);
+
+    return 0;
+}
+
+1.9) Escreva um programa de ajuda para vendedores. A partir de um valor total lido, mostre:
+
+1.9.1) O total a pagar com desconto de 10%;
+#include <stdio.h>
+
+int main()
+{
+    float valor, valor_desconto;
+    
+    printf("Valor: R$");
+    scanf("%f", &valor);
+    
+    valor_desconto = valor * 0.9;
+    
+    printf("Valor com desconto: R$%.2f", valor_desconto);
+
+    return 0;
+}
+
+1.9.2) O valor de cada parcela, no parcelamento de 3% sem juros;
+
+1.9.3) A comissão do vendedor, no caso da venda ser a vista (5% sobre o valor com desconto)
+
+
+1.9.4) A comissão do vendedor, no caso da venda ser parcelada (5% sobre o valor total)
+
+#include <stdio.h>
+
+int main()
+{
+     float valor, valor_desconto, valor_parcela;
+    
+    printf("Valor: R$");
+    scanf("%f", &valor);
+    
+    valor_desconto = valor * 0.9;
+    valor_parcela = valor / 3;
+    
+    printf("\nValor total: R$%.2f", valor);
+    printf("\nValor com desconto: R$%.2f", valor_desconto);
+    printf("\nValor de cada parcela em 3x sem juros: R$%.2f", valor_parcela);
+    printf("\nComissão do vendedor (à vista): R$%.2f", valor_desconto * 0.05);
+    printf("\nComissão do vendedor (à vista): R$%.2f", valor * 0.05);
+
+    return 0;
+}
+
+
+2 - Exercícios: comandos condicionais
+
+2.1) Faça um programa que receba dois números e mostre qual deles é o maior.
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2;
+    
+    printf("Digite dois números: ");
+    scanf("%d %d", &n1, &n2);
+    
+    if(n1 > n2)
+    {
+        printf("Maior: %d", n1);
+        printf("\nMenor: %d", n2);
+    }
+    else
+    {
+        printf("Maior: %d", n2);
+        printf("\nMenor: %d", n1);
+    }
+
+    return 0;
+}
+
+2.2) Leia um número fornecido pelo usuário. Se esse número for positivo, calcule a raiz quadrada do
+número. Se o número for negativo, mostre uma mensagem dizendo que o número é inválido.
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int n;
+    float raiz;
+    
+    printf("Digite um número: ");
+    scanf("%d", &n);
+    
+    if(n > 0)
+    {
+        raiz = sqrt(n);
+        printf("Raiz: %f", raiz);
+    }
+    else
+    {
+        printf("Número inválido");
+    }
+
+    return 0;
+}
+
+
+2.3) Leia um número real. Se o número for positivo imprima a raiz quadrada. Do contrário, imprima o número
+ao quadrado.
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float n, raiz;
+    
+    printf("Digite um número: ");
+    scanf("%f", &n);
+    
+    if(n > 0)
+    {
+        raiz = sqrt(n);
+        printf("Raiz: %f", raiz);
+    }
+    else
+    {
+        printf("Número ao Quadrado: %f", n * n);
+    }
+
+    return 0;
+}
+
+2.4) Faça um programa que leia um número e, caso ele seja positivo, calcule e mostre:
+
+2.4.1) O número digitado ao quadrado
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float n;
+    
+    printf("Digite um número: ");
+    scanf("%f", &n);
+    
+    if(n > 0)
+    {
+        printf("Quadrado: %f", n * n);
+    }
+    else
+    {
+        printf("Número inválido");
+    }
+
+    return 0;
+}
+
+2.4.2) A raiz quadrada do número digitado
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float n, raiz;
+    
+    printf("Digite um número: ");
+    scanf("%f", &n);
+    
+    if(n > 0)
+    {
+        raiz = sqrt(n);
+        printf("Raiz: %f", raiz);
+    }
+    else
+    {
+        printf("Número inválido");
+    }
+
+    return 0;
+}
+
+2.5) Faça um programa que receba um número inteiro e verifique se este número é par ou ímpar.
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    
+    printf("Digite um número: ");
+    scanf("%d", &n);
+    
+    if(n % 2 == 0)
+    {
+        printf("%d é um Número Par", n);
+    }
+    else
+    {
+        printf("%d é um Número Ímpar", n);
+    }
+
+    return 0;
+}
+
+2.6) Escreva um programa que, dados dois números inteiros, mostre na tela o maior deles, assim como a
+diferença existente entre ambos.
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2;
+    
+    printf("Digite dois número: ");
+    scanf("%d %d", &n1, &n2);
+    
+    if(n1 > n2)
+    {
+        printf("Maior número: %d", n1);
+        printf("Diferença: %d", n1 - n2);
+    }
+    else
+    {
+        printf("Maior número: %d", n2);
+        printf("\nDiferença: %d", n2 - n1);
+    }
+
+    return 0;
+}
+
+2.7) Faça um programa que receba dois números e mostre o maior. Se por acaso, os dois números forem
+iguais, imprima a mensagem Números iguais.
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2;
+    
+    printf("Digite dois número: ");
+    scanf("%d %d", &n1, &n2);
+    
+    if(n1 > n2)
+    {
+        printf("Maior número: %d", n1);
+    }
+    if(n1 == n2)
+    {
+        printf("Números iguais");
+    }
+    if(n2 > n1)
+    {
+        printf("Maior número: %d", n2);
+    }
+
+    return 0;
+}
+
+2.8) Faça um programa que leia 2 notas de um aluno, verifique se as notas são válidas e exiba na tela a
+média destas notas. Uma nota válida deve ser, obrigatoriamente, um valor entre 0.0 e 10.0, onde caso a
+nota não possua um valor válido, este fato deve ser informado ao usuário e o programa termina.
+#include <stdio.h>
+
+int main()
+{
+    float n1, n2, media;
+
+    printf("Nota 1: ");
+    scanf("%f", &n1);
+    
+    printf("Nota 2: ");
+    scanf("%f", &n2);
+
+    if (n1 < 0 || n2 > 10.0 ) {
+        printf("Nota Inválida!");
+    } else {
+        media = (n1+n2) / 2;
+        printf("Média: %f", media);
+    }
+
+    return 0;
+}
+
+2.9) Leia o salário de um trabalhador e o valor da prestação de um empréstimo. Se a prestação for maior
+que 20% do salário imprima: Empréstimo não concedido, caso contrário imprima: Empréstimo concedido.
+#include <stdio.h>
+
+int main()
+{
+    float salario, prestacao, limite;
+
+    printf("Digite o salário: R$");
+    scanf("%f", &salario);
+    
+    printf("Digite o valor da prestação: R$");
+    scanf("%f", &prestacao);
+    
+    limite = salario * 0.2;
+
+    if (prestacao > limite) {
+        printf("Empréstimo não concedido.\n");
+    } else {
+        printf("Empréstimo concedido.\n");
+    }
+
+    return 0;
+}

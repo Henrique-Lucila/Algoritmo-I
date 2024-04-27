@@ -1,0 +1,83 @@
+1)
+
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int a, b, soma;
+	printf("Digite o primeiro número: ");
+	scanf("%d", &a);
+	
+	printf("Digite o segundo número: ");
+	scanf("%d", &b);
+	
+	soma = a + b;
+	
+	printf("\n A soma dos números é: %d", soma);
+	
+	return 0;
+}
+
+2)
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, soma;
+	printf("Digite o primeiro número: ");
+	scanf("%d", &a);
+	
+	printf("Digite o segundo número: ");
+	scanf("%d", &b);
+	
+	soma = a * b;
+	
+	printf("\n A soma dos números é: %d", soma);
+
+    return 0;
+}
+
+3)
+
+#include <stdio.h>
+    
+    int main()
+    {
+        float x, y, area;
+    	printf("Digite o valor do lado X: ");
+    	scanf("%f", &x);
+    	
+    	printf("Digite o valor do lado Y: ");
+    	scanf("%f", &y);
+    	
+    	area = x * y;
+    	
+    	printf("\n A área do retângulo é: %f", area);
+    	
+    
+        return 0;
+    }
+
+5) A)
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Este é um programa em C \n.");
+
+    return 0;
+}
+
+B)
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Este \n é \n um \n programa \n em \n C.");
+
+    return 0;
+}
+	
